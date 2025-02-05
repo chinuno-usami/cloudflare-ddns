@@ -138,6 +138,8 @@ def get_zone_records(zone_uuid):
         total_pages = data.get('total_pages', 1)
 
     # Return all records
+    for d in records:
+        d['zone_id'] = zone_uuid
     return records
 
 # Update a record
